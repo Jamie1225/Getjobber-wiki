@@ -1,0 +1,72 @@
+{
+  "name": "jobber-app-template-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.6.7",
+    "@jobber/components": "^2.84.2",
+    "@jobber/design": "^0.25.1",
+    "@jobber/hooks": "^1.11.0",
+    "axios": "^0.27.2",
+    "graphql": "^16.5.0",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "react": "^16.14.0",
+    "react-app-rewired": "^2.2.1",
+    "react-dom": "^16.14.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.52.3",
+    "typescript": "^4.7.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "heroku-prebuild": "npm install -g serve",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test:staged": "CI=true react-app-rewired test --findRelatedTests",
+    "test:coverage": "CI=true react-app-rewired test . --coverage",
+    "test": "react-app-rewired test",
+    "lint": "eslint",
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^7.31.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^28.1.1",
+    "@types/node": "^16.11.38",
+    "@types/react": "^16.14.26",
+    "@types/react-dom": "^16.9.16",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
+    "msw": "^0.42.1",
+    "prettier": "^2.6.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "npm run test:staged"
+    ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/index.tsx",
+      "src/reportWebVitals.ts",
+      "src/helpers"
+    ]
+  }
+}
